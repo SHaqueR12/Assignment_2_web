@@ -60,7 +60,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check input errors before inserting in database
     if(empty($name_err) && empty($description_err) && empty($price_err) && empty($quantity_err) && empty($expeiry_date_err)){
         // Prepare an update statement
-        $sql = "UPDATE employees SET name=?, description=?, price=?, quantity=?, expeiry_date=? WHERE id=?";
+        $sql = "UPDATE product SET name=?, description=?, price=?, quantity=?, expeiry_date=? WHERE id=?";
          
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -163,7 +163,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5">Update Record</h2>
-                    <p>Please edit the input values and submit to update the employee record.</p>
+                    <p>Please edit the input values and submit to update the product.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
                             <label>Name</label>
